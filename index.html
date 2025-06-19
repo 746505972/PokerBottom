@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>扑克牌堆叠效果</title>
+  <!-- Tailwind CSS CDN（快速样式） -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 自定义样式 */
+    .card {
+      transition: all 0.3s ease;
+      transform-origin: bottom center;
+    }
+    .card:hover {
+      transform: translateY(-10px) scale(1.05);
+      z-index: 10;
+    }
+    .card.selected {
+      transform: translateY(-40px) !important;
+      box-shadow: 0 0 15px rgba(95, 95, 95, 0.5);
+    }
+  </style>
+</head>
+<body class="bg-green-800 p-8">
+  <div class="flex justify-center">
+    <button id="generate" class="bg-blue-500 text-white px-4 py-2 rounded mb-8">
+      刷新
+    </button>
+  </div>
+  <div id="card-container" class="relative h-64 flex justify-center">
+    <!-- 扑克牌将在这里动态生成 -->
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
