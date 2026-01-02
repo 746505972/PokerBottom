@@ -32,7 +32,7 @@ function renderCards(cards) {
 
   cards.forEach((card, index) => {
     const cardElement = document.createElement('div');
-    cardElement.className = `card absolute w-24 h-36 bg-white rounded-md shadow-lg ${card.color} cursor-pointer`;
+    cardElement.className = `card absolute w-24 h-36 bg-white rounded-md shadow-lg ${card.color} cursor-pointer select-none`;
     cardElement.style.left = `${index * 30}px`;
     cardElement.style.zIndex = index;
 
@@ -40,26 +40,26 @@ function renderCards(cards) {
       // Joker 牌（大王或小王）
       const isBigJoker = card.rank === 'Big Joker';
       cardElement.innerHTML = `
-        <div class="absolute top-1 left-1 text-sm font-bold">
+        <div class="absolute top-1 left-1 text-lg font-bold select-none">
           J<br>O<br>K<br>E<br>R
         </div>
-        <div class="absolute inset-0 flex items-center justify-center text-5xl">
+        <div class="absolute inset-0 flex items-center justify-center text-5xl select-none">
           🃏
         </div>
-        <div class="absolute bottom-1 right-1 text-sm font-bold transform rotate-180">
+        <div class="absolute bottom-1 right-1 text-lg font-bold transform rotate-180 select-none">
           J<br>O<br>K<br>E<br>R
         </div>
       `;
     } else {
       // 普通牌
       cardElement.innerHTML = `
-        <div class="absolute top-1 left-1 text-lg font-bold">
+        <div class="absolute top-1 left-1 text-lg font-bold select-none">
           ${card.rank}<br>${card.suit}
         </div>
-        <div class="absolute inset-0 flex items-center justify-center text-5xl">
+        <div class="absolute inset-0 flex items-center justify-center text-5xl select-none">
           ${card.suit}
         </div>
-        <div class="absolute bottom-1 right-1 text-lg font-bold transform rotate-180">
+        <div class="absolute bottom-1 right-1 text-lg font-bold transform rotate-180 select-none">
           ${card.rank}<br>${card.suit}
         </div>
       `;
